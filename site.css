@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'monaco';
+  src: url("fonts/monaco.eot");
+  src: url("fonts/monaco.eot#iefix") format("embedded-opentype"), url("fonts/monaco.ttf") format("truetype"), url("fonts/monaco.woff") format("woff"), url("fonts/monaco.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  speak: none; }
+
+.icon {
+  font-family: 'monaco';
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  /* child elements absolute */
+  position: relative;
+  /* remove inline-block white-space */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 256px;
+  width: 256px;
+  font-size: 256px; }
+
+.icon:before,
+.icon:after,
+.icon span:before,
+.icon span:after {
+  display: block;
+  position: absolute;
+  white-space: normal;
+  text-indent: 0;
+  font-size: 256px;
+  font-family: 'monaco';
+  font-weight: 400 !important;
+  font-style: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  /* screenreaders */
+  speak: none; }
+
+.icon.class:before {
+  content: "";
+  color: #F6F6F6; }
+
+.icon.class:after {
+  content: "";
+  color: #C27D1A; }
+
+.icon.class.dark:before {
+  color: #2d2d30; }
+
+.icon.class.dark:after {
+  color: #e8ab53; }
+
+.icon.method:before {
+  content: "";
+  color: #F6F6F6; }
+
+.icon.method > span:before {
+  content: "";
+  color: #652D90; }
+
+.icon.method:after {
+  content: "";
+  color: #F0EFF1; }
+
+.icon.method.dark:before {
+  color: #2d2d30; }
+
+.icon.method.dark > span:before {
+  color: #b180d7; }
+
+.icon.method.dark:after {
+  color: #2b282e; }

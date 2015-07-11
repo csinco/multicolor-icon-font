@@ -1,0 +1,52 @@
+@import "icons_colors";
+
+$class-c0: 		"\e600";
+$class-c1: 		"\e601";
+$method-c0: 	"\e602";
+$method-c1: 	"\e603";
+$method-c2: 	"\e604";
+
+.icon.class:before {
+  	content: $class-c0;
+    color: $outline-bg-light;
+}
+
+.icon.class:after {
+  	content: $class-c1;
+    color: $orange-light;
+}
+
+.icon.class.dark:before {
+    color: $outline-bg-dark;
+}
+
+.icon.class.dark:after {
+    color: $orange-dark;
+}
+
+.icon.method:before {
+  	content: $method-c0;
+    color: $outline-bg-light;
+}
+
+.icon.method > span:before {
+  	content: $method-c1;
+    color: $purple-light;
+}
+
+.icon.method:after {
+  	content: $method-c2;
+    color: $icon-fg-light;
+}
+
+.icon.method.dark:before {
+    color: $outline-bg-dark;
+}
+
+.icon.method.dark > span:before {
+    color: $purple-dark;
+}
+
+.icon.method.dark:after {
+    color: $icon-fg-dark;
+}

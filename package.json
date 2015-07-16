@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/csinco/multicolor-icon-font",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "event-stream": "^3.3.1",
+    "gulp": "^3.9.0",
+    "gulp-xml-editor": "^2.2.1",
+    "vinyl": "^0.5.0"
   }
 }

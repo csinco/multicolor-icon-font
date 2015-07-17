@@ -20,7 +20,7 @@
     "event-stream": "^3.3.1",
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
-    "gulp-xml-editor": "^2.2.1",
+    "libxmljs": "^0.14.2",
     "vinyl": "^0.5.0"
   }
 }

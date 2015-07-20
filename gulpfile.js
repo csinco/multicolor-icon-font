@@ -3,6 +3,7 @@ var fs = require('fs');
 var File = require('vinyl');
 var es = require('event-stream');
 var rename = require('gulp-rename');
+var imagemin = require('gulp-imagemin');
 var xmljs = require('libxmljs');
 
 var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
@@ -12,24 +13,33 @@ gulp.task('default', function () {
 	console.log('Splitting SVGs...');
 	
 	var splitFiles = [];
-	gulp.src(['source/*orig.svg'])
+	gulp.src(['source/*.svg'])
 		.pipe(es.mapSync(function(f) {
 			var xmlDoc = xmljs.parseXml(f.contents.toString('utf-8'));
-
-			var y = xmlDoc.find('//xmlns:g', SVG_NAMESPACE);
-			y.map(function(x) {
-				var a = x.attr('id');
-				if (a) {
-					console.log(a.value());
+			var root = xmlDoc.root();
+			var cn = [];
+			root.childNodes().map(function(n) {
+				if (n.type() === 'element') {
+					cn.push(n);
 				}
+				n.remove();
+			});
+			cn.map(function(c, idx) {
+				root.addChild(c);
+				splitFiles.push(new File({ 
+					cwd: "", 
+					base: "", 
+					path: f.relative.substr(0, f.relative.indexOf('.')) + "_" + idx + ".svg", 
+					contents: new Buffer(xmlDoc.toString()) 
+				}));
+				root.child(0).remove();
 			});
 
-			//splitFiles.push(new File({ cwd: "", base: "", path: f.relative + "-1.txt", contents: new Buffer('hello') }));
 			return f;
 		}))
 		.pipe(es.through(null, function () {
-			es.readArray(splitFiles)
-				.pipe(rename({ extname: '.svg' }))
+			es.readArray(splitFiles)	
+				.pipe(imagemin())
 				.pipe(gulp.dest(SVG_DEST));
 		}));
-;})
+});

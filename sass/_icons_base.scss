@@ -2,11 +2,10 @@ $icon-size: 256px;
 
 @font-face {
 	font-family: 'monaco';
-	src:url('fonts/monaco.eot');
-	src:url('fonts/monaco.eot#iefix') format('embedded-opentype'),
-		url('fonts/monaco.ttf') format('truetype'),
-		url('fonts/monaco.woff') format('woff'),
-		url('fonts/monaco.svg') format('svg');
+	src:url('source/out/monaco.eot');
+	src:url('source/out/monaco.eot#iefix') format('embedded-opentype'),
+		url('source/out/monaco.ttf') format('truetype'),
+		url('source/out/monaco.woff') format('woff');		
 	font-weight: normal;
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;

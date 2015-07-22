@@ -1,10 +1,10 @@
 @import "icons_colors";
 
-$class-c0: 		"\e600";
-$class-c1: 		"\e601";
-$method-c0: 	"\e602";
-$method-c1: 	"\e603";
-$method-c2: 	"\e604";
+$class-c0: 		"\eA01";
+$class-c1: 		"\eA02";
+$method-c0: 	"\eA03";
+$method-c1: 	"\eA04";
+$method-c2: 	"\eA05";
 
 .icon.class:before {
   	content: $class-c0;

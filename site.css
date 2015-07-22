@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'monaco';
-  src: url("fonts/monaco.eot");
-  src: url("fonts/monaco.eot#iefix") format("embedded-opentype"), url("fonts/monaco.ttf") format("truetype"), url("fonts/monaco.woff") format("woff"), url("fonts/monaco.svg") format("svg");
+  src: url("source/out/monaco.eot");
+  src: url("source/out/monaco.eot#iefix") format("embedded-opentype"), url("source/out/monaco.ttf") format("truetype"), url("source/out/monaco.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -46,11 +46,11 @@
   speak: none; }
 
 .icon.class:before {
-  content: "";
+  content: "";
   color: #F6F6F6; }
 
 .icon.class:after {
-  content: "";
+  content: "";
   color: #C27D1A; }
 
 .icon.class.dark:before {
@@ -60,15 +60,15 @@
   color: #e8ab53; }
 
 .icon.method:before {
-  content: "";
+  content: "";
   color: #F6F6F6; }
 
 .icon.method > span:before {
-  content: "";
+  content: "";
   color: #652D90; }
 
 .icon.method:after {
-  content: "";
+  content: "";
   color: #F0EFF1; }
 
 .icon.method.dark:before {

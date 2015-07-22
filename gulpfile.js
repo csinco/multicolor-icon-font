@@ -4,6 +4,7 @@ var File = require('vinyl');
 var es = require('event-stream');
 var rename = require('gulp-rename');
 var imagemin = require('gulp-imagemin');
+var iconfont = require('gulp-iconfont');
 var xmljs = require('libxmljs');
 
 var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
@@ -40,6 +41,19 @@ gulp.task('default', function () {
 		.pipe(es.through(null, function () {
 			es.readArray(splitFiles)	
 				.pipe(imagemin())
+				.pipe(iconfont({
+					fontName: 'monaco',
+					fontHeight: 1001,
+					normalize: true,
+					appendCodepoints: true
+				}))
+				.on('glyphs', function(codepoints) {
+					codepoints.forEach(function(glyph, idx, arr) {
+						arr[idx].codepoint = glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase();
+						console.log(arr[idx].codepoint);
+					});
+					
+				})
 				.pipe(gulp.dest(SVG_DEST));
 		}));
 });

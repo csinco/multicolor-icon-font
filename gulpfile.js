@@ -39,6 +39,7 @@ gulp.task('default', function () {
 			return f;
 		}))
 		.pipe(es.through(null, function () {
+			console.log('Creating split files...');
 			es.readArray(splitFiles)	
 				.pipe(imagemin())
 				.pipe(iconfont({
